@@ -1,0 +1,21 @@
+
+<%- include('header'); -%>
+
+<h1>Dodaj przetarg:</h1>
+<form action="" method="post">
+    <label for="name">Nazwa przedmiotu przetargu:</label><br>
+    <input type="text" id="name" name="name" value=""><br><br>
+    <label for="institutionName">Nazwa instutucji zgłaszającej przetarg:</label><br>
+    <input type="text" id="institutionName" name="institutionName" value=""><br><br>
+    <label for="description">Opis:</label><br>
+    <textarea id="description" name="description" cols="30" rows="5"></textarea><br><br>
+    <label for="start">Data i godzina rozpoczęcia zbierania ofert w przetargu:</label><br>
+    <input type="datetime-local" id="start" name="start" value=""><br><br>
+    <label for="end">Data i godzina zakończenia przyjmowania ofert w przetargu:</label><br>
+    <input type="datetime-local" id="end" name="end" value=""><br><br>
+    <label for="budget">Budżet (w zł):</label><br>
+    <input type="number" step="0.01" id="budget" name="budget" value=""><br><br>
+    <input type="submit" value="Dodaj przetarg">
+</form>
+
+<%- include('footer'); -%>

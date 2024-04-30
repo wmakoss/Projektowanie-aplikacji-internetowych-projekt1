@@ -1,0 +1,31 @@
+
+<%- include('header'); -%>
+
+<b>Nazwa przedmiotu przetargu: </b><%= auction.name %><br>
+<b>Nazwa instutucji zgłaszającej przetarg: </b><%= auction.institutionName %><br>
+<b>Opis:</b>
+<pre><%= auction.description %></pre>
+<b>Data i godzina rozpoczęcia zbierania ofert w przetargu: </b><%= auction.start %><br>
+<b>Data i godzina zakończenia przyjmowania ofert w przetargu: </b><%= auction.end %><br>
+<br>
+<h2>Oferty:</h2>
+<% if(offers.length === 0){ %>
+    <h4>Brak ofert</h4>
+<% } else {%>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Nazwa składającego oferte</th>
+            <th>Wartość oferty</th>
+        </tr>
+        <% for (var i = 0; i < offers.length; i++) { %>
+            <tr>
+                <td><%= i+1 %></td>
+                <td><%= offers[i].name %></td>
+                <td><%= offers[i].value%></td>
+            </tr>
+        <% } %>
+    </table>
+<% } %>
+
+<%- include('footer'); -%>

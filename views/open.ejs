@@ -1,0 +1,26 @@
+
+<%- include('header'); -%>
+
+<h1>Otwarte przetargi:</h1>
+<% if(openAuctions.length === 0){ %>
+    <h3>Brak otwartych przetargów</h3>
+<% } else {%>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Nazwa przedmiotu przetargu</th>
+            <th>Data i godzina rozpoczęcia zbierania ofert w przetargu</th>
+            <th>Data i godzina zakończenia przyjmowania ofert w przetargu</th>
+        </tr>
+        <% for (var i = 0; i < openAuctions.length; i++) { %>
+            <tr class="clickable" onclick="location.href='/auction/<%= openAuctions[i].id %>'">
+                <td><%= i+1 %></td>
+                <td><%= openAuctions[i].name %></td>
+                <td><%= openAuctions[i].start %></td>
+                <td><%= openAuctions[i].end %></td>
+            </tr>
+        <% } %>
+    </table>
+<% } %>
+
+<%- include('footer'); -%>

@@ -1,0 +1,99 @@
+
+*
+{
+    box-sizing: border-box;
+}
+
+a
+{
+    text-decoration: none;
+    color: inherit;
+}
+
+body
+{
+    padding: 2vw;
+    padding-right: 2vw;
+    border: 0;
+    margin: 0;
+    font-size: 20px;
+}
+
+input
+{
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+textarea
+{
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+#menu
+{
+    border-radius: 50px;
+    overflow: hidden;
+    height: 70px;
+    width: 96vw;
+}
+
+#menu::after
+{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.menuButton
+{
+    width: 25%;
+    float: left;
+    background-color: lightgrey;
+    height: 70px;
+    cursor: pointer;
+    font-size: 25px;
+    text-align: center;
+    line-height: 70px;
+    font-weight: bold;
+}
+
+.menuButton:hover
+{
+    background-color: gray;
+    color: white;
+}
+
+#content
+{
+    padding: 20px;
+    text-align: center;
+}
+
+table, td, th
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 15px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th
+{
+    background-color: lightgray;
+    color: black;
+}
+
+.clickable
+{
+    cursor: pointer;
+}
+
+.clickable:hover
+{
+    background-color: gray;
+    color: white;
+}

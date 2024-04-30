@@ -1,0 +1,24 @@
+
+<%- include('header'); -%>
+
+<h1>Zakończone przetargi:</h1>
+<% if(closedAuctions.length === 0){ %>
+    <h3>Brak zakończonych przetargów</h3>
+<% } else {%>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Nazwa przedmiotu przetargu</th>
+            <th>Status przetargu</th>
+        </tr>
+        <% for (var i = 0; i < closedAuctions.length; i++) { %>
+            <tr class="clickable" onclick="location.href='/auction/<%= closedAuctions[i].id %>'">
+                <td><%= i+1 %></td>
+                <td><%= closedAuctions[i].name %></td>
+                <td>Zakończony</td>
+            </tr>
+        <% } %>
+    </table>
+<% } %>
+
+<%- include('footer'); -%>
