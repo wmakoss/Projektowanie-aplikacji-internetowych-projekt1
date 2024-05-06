@@ -1,5 +1,6 @@
 
 var auctionsModel = require('../models/auctions');
+var offersService = require('../services/offers');
 
 function getCurrentDateTime() {
     var now = new Date();
@@ -67,19 +68,11 @@ function getAuctionByIdWithStatusAndOffers(id) {
     if (auction == null) {
         offers = null;
     } else {
-        offers = getOffersByAuctionId(id, auction.budget);
+        offers = offersService.getOffersByAuctionId(id, auction.budget);
     }
 
     return {status: status, auction: auction, offers: offers};
 
-}
-
-function addNewOffer(id, name, value) {
-    auctionsModel.addNewOffer(id, name, value);
-}
-
-function getOffersByAuctionId(auctionId, budget) {
-    return auctionsModel.getOffersByAuctionId(auctionId, budget);
 }
 
 module.exports = {
@@ -87,6 +80,5 @@ module.exports = {
     getOpenAuctions,
     getClosedAuctions,
     getAuctionById,
-    getAuctionByIdWithStatusAndOffers,
-    addNewOffer
+    getAuctionByIdWithStatusAndOffers
 };

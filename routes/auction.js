@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var auctionsService = require('../services/auction');
+var offersService = require('../services/offers');
 
 router.get('/:id', function(req, res, next) {
     var auctionWithStatusAndOffers = auctionsService.getAuctionByIdWithStatusAndOffers(req.params.id);
@@ -17,7 +18,7 @@ router.get('/:id', function(req, res, next) {
 router.post('/:id', function(req, res, next) {
     
     // TODO: input validation and status of auction must be set to open
-    auctionsService.addNewOffer(req.params.id, req.body.name, req.body.value);
+    offersService.addNewOffer(req.params.id, req.body.name, req.body.value);
     
     //TODO: add message (new offer created)
     var auctionWithStatusAndOffers = auctionsService.getAuctionByIdWithStatusAndOffers(req.params.id);
