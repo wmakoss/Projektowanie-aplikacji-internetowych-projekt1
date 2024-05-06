@@ -8,6 +8,13 @@
 <b>Data i godzina rozpoczęcia zbierania ofert w przetargu: </b><%= auction.start %><br>
 <b>Data i godzina zakończenia przyjmowania ofert w przetargu: </b><%= auction.end %><br>
 <br>
+
+<% if(message != ""){ %>
+
+<div class="message"><%= message %></div>
+    
+<% } %>
+
 <h2>złóż ofertę:</h2>
 <form action="" method="post">
     <label for="name">Twoja nazwa:</label><br>

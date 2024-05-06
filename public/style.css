@@ -97,3 +97,21 @@ th
     background-color: gray;
     color: white;
 }
+
+.message
+{
+    background-color: rgb(137, 150, 236);
+    border-color: blue;
+    border-width: 5px;
+    border-style: solid;
+    border-radius: 25px;
+    height: 50px;
+    line-height: 40px;
+    color: white;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}

@@ -7,7 +7,7 @@ var offersService = require('../services/offers');
 router.get('/:id', function(req, res, next) {
     var auctionWithStatusAndOffers = auctionsService.getAuctionByIdWithStatusAndOffers(req.params.id);
     if (auctionWithStatusAndOffers.status == "open") {
-        res.render('auctionOpen', {auction: auctionWithStatusAndOffers.auction});
+        res.render('auctionOpen', {auction: auctionWithStatusAndOffers.auction, message: ""});
     } else if (auctionWithStatusAndOffers.status == "closed") {
         res.render('auctionClosed', {auction: auctionWithStatusAndOffers.auction, offers: auctionWithStatusAndOffers.offers});
     } else {
@@ -20,10 +20,9 @@ router.post('/:id', function(req, res, next) {
     // TODO: input validation and status of auction must be set to open
     offersService.addNewOffer(req.params.id, req.body.name, req.body.value);
     
-    //TODO: add message (new offer created)
     var auctionWithStatusAndOffers = auctionsService.getAuctionByIdWithStatusAndOffers(req.params.id);
     if (auctionWithStatusAndOffers.status == "open") {
-        res.render('auctionOpen', {auction: auctionWithStatusAndOffers.auction});
+        res.render('auctionOpen', {auction: auctionWithStatusAndOffers.auction, message: "Nowa oferta została dodana!"});
     } else if (auctionWithStatusAndOffers.status == "closed") {
         res.render('auctionClosed', {auction: auctionWithStatusAndOffers.auction, offers: auctionWithStatusAndOffers.offers});
     } else {

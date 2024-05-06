@@ -1,6 +1,12 @@
 
 <%- include('header'); -%>
 
+<% if(message != ""){ %>
+
+<div class="message"><%= message %></div>
+
+<% } %>
+
 <h1>Dodaj przetarg:</h1>
 <form action="" method="post">
     <label for="name">Nazwa przedmiotu przetargu:</label><br>
