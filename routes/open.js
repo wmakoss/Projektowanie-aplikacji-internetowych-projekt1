@@ -1,11 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-var auctionsService = require('../services/auction');
+var openController = require('../controllers/open');
 
-router.get('/', function(req, res, next) {
-    var openAuctions = auctionsService.getOpenAuctions();
-    res.render('open', {openAuctions: openAuctions});
-});
+router.get('/', openController.get);
 
 module.exports = router;
