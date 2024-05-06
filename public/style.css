@@ -115,3 +115,16 @@ th
     margin-bottom: 40px;
     font-weight: bold;
 }
+
+.successmessage
+{
+    background-color: rgb(190, 255, 197);
+    border-color: lime;
+    color: black;
+}
+
+.errormessage
+{
+    background-color: rgb(238, 123, 123);
+    border-color: red;
+}
